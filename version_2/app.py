@@ -1,41 +1,16 @@
-from flask import Flask
+"""
+Im going about this the wrong way
 
-import os, requests, config
+I need to define the functions of the app first
 
-app = Flask(__name__)
+Then i have to use templates structure for flask
+"""
 
-@app.route('/', methods =['GET'])
-def index():
-    location_url = f"https://api.openweathermap.org/geo/1.0/zip?zip=18062&appid={config.api_key}"
-    location_response = requests.get(location_url)
+def get_lat_and_long(zip_code):
+    pass
 
-    list_of_data = location_response.json()
+def get_current_forcast(lat, long):
+    pass
 
-    html_data = f"""
-        <input type="text" placeholder="Search this shiat.."> 
-        <table border="1">
-        <tr>
-            <td>Zip</td>
-            <td>Name</td>
-            <td>Lat</td>
-            <td>Long</td>
-            <td>Country</td>
-        </tr>
-        <tr>
-            <td>{str(list_of_data['zip'])}</td>
-            <td>{str(list_of_data['name'])}</td>
-            <td>{str(list_of_data['lat'])}</td>
-            <td>{str(list_of_data['lon'])}</td>
-            <td>{str(list_of_data['country'])}</td>
-        </tr>
-
-        </table>
-    """
-
-
-  
-
-    return html_data
-
-
- 
+def get_five_day_forcast(lat, long):
+    pass
