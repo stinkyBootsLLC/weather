@@ -13,7 +13,9 @@ def index():
         # wrap with HTML escape
         zipcode = escape(request.form['zip-code'])
 
-        get_weather(zipcode)
+        data = get_weather(zipcode)
+
+        print(data)
 
         # print(zipcode)
        

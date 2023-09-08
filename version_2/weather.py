@@ -35,10 +35,11 @@ def get_five_day_forcast(lat, long):
 def main(zip_code):
     # print(zip_code)
     cordinates = get_lat_and_long(zip_code)
-    print(cordinates)
+     
     current_forcast = get_current_forcast(cordinates[0], cordinates[1])
-    print(current_forcast)
+    
     # five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
+    return current_forcast
 
 
 if __name__ == "__main__":
