@@ -17,8 +17,19 @@ def get_lat_and_long(zip_code):
 def get_current_forcast(lat, long):
 
     response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
+    return {
+        "description":response["weather"][0]["description"],
+        "icon":response["weather"][0]["icon"],
+        "temp":response["main"]["temp"],
+        "temp_min":response["main"]["temp_min"],
+        "temp_max":response["main"]["temp_max"],
+        "feels_like":response["main"]["feels_like"],
+        "humidity":response["main"]["humidity"]
+    }
+ 
 
-    return response
+   
+     
      
 
 def get_five_day_forcast(lat, long):
@@ -26,10 +37,10 @@ def get_five_day_forcast(lat, long):
     return response
 
 cordinates = get_lat_and_long("18062")
-print(cordinates)
+# print(cordinates)
 
 current_forcast = get_current_forcast(cordinates[0], cordinates[1])
 print(current_forcast)
 
 five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
-print(five_day_forcast)
+# print(five_day_forcast)
