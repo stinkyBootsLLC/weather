@@ -8,8 +8,11 @@ app = Flask(__name__)
 def index():
 
  
+    data = None
 
     if request.method == 'POST':
+
+        print(request.method)
         # wrap with HTML escape
         zipcode = escape(request.form['zip-code'])
 
@@ -17,9 +20,9 @@ def index():
 
         print(data)
 
-        # print(zipcode)
+        
        
-    return render_template("index.html")
+    return render_template("index.html",data=data)
 
 
 if __name__ == "__main__":

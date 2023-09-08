@@ -11,13 +11,22 @@ import requests
 def get_lat_and_long(zip_code): 
 
     response = requests.get(f"https://api.openweathermap.org/geo/1.0/zip?zip={zip_code}&appid={config.api_key}").json()
+    
+    if 'cod' in response:
 
-    return [response['lat'], response['lon']]
+        coordinates = [response['cod'], response['message']]
+    else:
+
+         coordinates = [response['lat'], response['lon']]
+
+    return coordinates 
 
 def get_current_forcast(lat, long):
 
     response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
+ 
     return {
+        "name":response["name"],
         "description":response["weather"][0]["description"],
         "icon":response["weather"][0]["icon"],
         "temp":response["main"]["temp"],
@@ -33,22 +42,22 @@ def get_five_day_forcast(lat, long):
     return response
 
 def main(zip_code):
-    # print(zip_code)
-    cordinates = get_lat_and_long(zip_code)
-     
-    current_forcast = get_current_forcast(cordinates[0], cordinates[1])
     
-    # five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
+    cordinates = get_lat_and_long(zip_code)
+    
+    if cordinates[0] != '404': 
+
+        current_forcast = get_current_forcast(cordinates[0], cordinates[1])
+        # five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
+    else:
+
+        current_forcast = {"Error":"coordinates failed"}
+
     return current_forcast
-
-
+ 
+    
 if __name__ == "__main__":
-    # user_input = "18062"
+   
     main(user_input)
 
-# cordinates = get_lat_and_long("18062")
-# print(cordinates)
-# current_forcast = get_current_forcast(cordinates[0], cordinates[1])
-# print(current_forcast)
-# five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
-# # print(five_day_forcast)
+ 
