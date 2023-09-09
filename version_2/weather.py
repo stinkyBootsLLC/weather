@@ -33,7 +33,8 @@ def get_current_forcast(lat, long):
         "temp_min":response["main"]["temp_min"],
         "temp_max":response["main"]["temp_max"],
         "feels_like":response["main"]["feels_like"],
-        "humidity":response["main"]["humidity"]
+        "humidity":response["main"]["humidity"],
+        "pressure":response["main"]["pressure"]
     }
  
 
