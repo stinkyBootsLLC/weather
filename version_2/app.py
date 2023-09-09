@@ -18,7 +18,7 @@ def index():
 
         data = get_weather(zipcode)
 
-        print(data)
+        # print(data)
 
         
        

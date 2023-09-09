@@ -40,7 +40,9 @@ def get_current_forcast(lat, long):
 
 def get_five_day_forcast(lat, long):
     response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
-    return response
+
+    
+    return response['list']
 
 def main(zip_code):
     
@@ -49,12 +51,16 @@ def main(zip_code):
     if cordinates[0] != '404': 
 
         current_forcast = get_current_forcast(cordinates[0], cordinates[1])
-        # five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
+
+        five_day_forcast = get_five_day_forcast(cordinates[0], cordinates[1])
+
+        weather_data = {"current":current_forcast, "forcast":five_day_forcast }
+    
     else:
 
-        current_forcast = {"Error":"coordinates failed"}
+        weather_data = {"Error":"coordinates failed"}
 
-    return current_forcast
+    return weather_data
  
     
 if __name__ == "__main__":
