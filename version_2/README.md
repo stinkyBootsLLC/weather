@@ -42,4 +42,4 @@ This project is licensed under the [The Unlicense](https://unlicense.org)
 ## Acknowledgments
 
 * [@datagy](https://youtu.be/JCD7YdOSsWI?si=8E_8CIXMRshxY1CK) Build YOUR OWN Weather App in Python with Flask (COMPLETE Beginner Tutorial)
-* [Flask](https://flask.palletsprojects.com/en/2.3.x/)
+* [Flask](https://flask.palletsprojects.com/en/2.3.x/) Documentation
