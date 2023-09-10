@@ -13,6 +13,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """ Returns index.html (Jinja2 template engine)
+        Passes variable data.
+
+        Returns: render_template (render_template)
+    """
 
     data = None
 
@@ -31,8 +36,16 @@ def index():
 
 @app.context_processor
 def utility_processor():
+    """ injects new variables automatically into the context of a template
 
+        Function get_day()
+    """
     def get_day(date_str):
+    """ Returns the day of the week based on a date string
+
+        Parameters: date_str (str)
+        Returns: Day (str)
+    """
 
         date_format = '%Y-%m-%d %H:%M:%S'
 
