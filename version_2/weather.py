@@ -1,6 +1,6 @@
 """ 
 Name: weather.py
-Description: Logic for retrieving weather data form openweathermap.org RESTful API
+Description: Logic for retrieving weather data from openweathermap.org RESTful API
 Author: Eduardo Estrada
 Date: 9/10/2023
 """
