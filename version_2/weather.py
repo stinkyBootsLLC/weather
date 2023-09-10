@@ -8,6 +8,11 @@ import config
 import requests
 
 def get_lat_and_long(zip_code): 
+    """ Returns a list with lattitude and longitude coordinates 
+
+        Parameters: zip_code (str)
+        Returns: coordinates (list)
+    """
 
     response = requests.get(f"https://api.openweathermap.org/geo/1.0/zip?zip={zip_code}&appid={config.api_key}").json()
     
@@ -21,6 +26,12 @@ def get_lat_and_long(zip_code):
     return coordinates 
 
 def get_current_forcast(lat, long):
+
+    """ Returns a dictionary of current weather information based on lattitude and longitude
+
+        Parameters: lat, long (str)
+        Returns: (dict)
+    """
 
     response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
  
@@ -39,11 +50,23 @@ def get_current_forcast(lat, long):
 
 def get_five_day_forcast(lat, long):
 
+    """ Returns a list of 5 day weather forecast information based on lattitude and longitude
+
+        Parameters: lat, long (str)
+        Returns: response['list'] (list)
+    """
+
     response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
 
     return response['list']
 
 def main(zip_code):
+
+        """ Returns a dictionary of information based on zipcode
+
+            Parameters: zip_code (str)
+            Returns: weather_data (dict)
+        """
     
     cordinates = get_lat_and_long(zip_code)
     
