@@ -1,4 +1,9 @@
-
+""" 
+Name: weather.py
+Description: Logic for retrieving weather data form openweathermap.org RESTful API
+Author: Eduardo Estrada
+Date: 9/10/2023
+"""
 import config
 import requests
 
@@ -11,7 +16,7 @@ def get_lat_and_long(zip_code):
         coordinates = [response['cod'], response['message']]
     else:
 
-         coordinates = [response['lat'], response['lon']]
+        coordinates = [response['lat'], response['lon']]
 
     return coordinates 
 

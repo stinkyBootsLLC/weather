@@ -80,7 +80,7 @@
 
                             <img src="https://openweathermap.org/img/wn/{{ i['weather'][0]['icon'] }}.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ format_date(i["dt_txt"]) }} <strong>{{ i["main"]["temp"] }} &deg;F</strong> 
+                            {{ get_day(i["dt_txt"]) }} <strong>{{ i["main"]["temp"] }} &deg;F</strong> 
                             <em style="color: rgb(85, 85, 89);">{{ i["weather"][0]["description"] }}</em> 
                         </li>
 

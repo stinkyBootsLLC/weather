@@ -1,3 +1,9 @@
+""" 
+Name: app.py
+Description: Logic for flask web application
+Author: Eduardo Estrada
+Date: 9/10/2023
+"""
 from flask import Flask, render_template, request
 from markupsafe import escape
 from weather import main as get_weather
@@ -26,7 +32,7 @@ def index():
 @app.context_processor
 def utility_processor():
 
-    def format_date(date_str):
+    def get_day(date_str):
 
         date_format = '%Y-%m-%d %H:%M:%S'
 
@@ -34,7 +40,7 @@ def utility_processor():
 
         return datetime_object.strftime('%A')
 
-    return dict(format_date=format_date)
+    return dict(get_day=get_day)
 
 
 if __name__ == "__main__":
