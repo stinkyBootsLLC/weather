@@ -2,6 +2,8 @@
 
 Created for educational purposes only. I wanted to create a web app using the python flask framework.  I needed the application to be simple and cover the basics of using flask.  I created the original vers 1, to replace a html widget for a work project. It was a prototype and never implemented (I got a job somewhere else). I am currently in a dept. wide python training program (self pased) and working on seperate python projects not related to web technologies. This one was just for me and just for fun. This is a minimum viable application (very basic)
 
+![demoshot](./demoshot.png)
+
 ## Features
 
 1. Search by U.S. zipcode.
