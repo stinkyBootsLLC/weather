@@ -39,7 +39,7 @@
                     <br>
 
                     {% if data %}
-                    
+
                     {% if data["Error"] != "coordinates failed" %}
 
                     <div class="card mb-3" style="max-width: 540px;">
@@ -72,45 +72,58 @@
                 </div>
                 <div class="col">
                     <h2>Five Day Forecast</h2>
-                    <ul class="list-group">
+
+
+                    <div class="accordion" id="forecast">
+
                         {% for i in data.forcast[::8] %}
 
-                        <!-- <li>{{ i["dt"] }}</li> -->
-                        <li class="list-group-item">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_{{ i['dt'] }}">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_{{ i['dt'] }}" aria-expanded="false"
+                                    aria-controls="collapse_{{ i['dt'] }}">
+                                    <img src="https://openweathermap.org/img/wn/{{ i['weather'][0]['icon'] }}.png"
+                                        class="img-fluid rounded-start" alt="icon">
+                                    {{ get_day(i["dt_txt"]) }}<strong> &nbsp;{{ i["main"]["temp"] }} &deg;F</strong>
+                                    <em style="color: rgb(85, 85, 89);">&nbsp;{{ i["weather"][0]["description"] }}</em>
+                                </button>
+                            </h2>
+                            <div id="collapse_{{ i['dt'] }}" class="accordion-collapse collapse"
+                                aria-labelledby="heading_{{ i['dt'] }}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    This is the first item's accordion body.
 
-                            <img src="https://openweathermap.org/img/wn/{{ i['weather'][0]['icon'] }}.png"
-                                class="img-fluid rounded-start" alt="icon">
-                            {{ get_day(i["dt_txt"]) }} <strong>{{ i["main"]["temp"] }} &deg;F</strong> 
-                            <em style="color: rgb(85, 85, 89);">{{ i["weather"][0]["description"] }}</em> 
-                        </li>
-
+                                </div>
+                            </div>
+                        </div>
                         {% endfor %}
 
-                    </ul>
+
+                    </div>
+
+
+
+
+                    {% else %}
+
+                    <div class="alert alert-warning" role="alert">zipcode not found</div>
+
+
+                    {% endif %}
+
+                    {% endif %}
 
                 </div>
-
-                {% else %}
-
-                <div class="alert alert-warning" role="alert">zipcode not found</div>
-
-
-                {% endif %}
-
-                {% endif %}
-
             </div>
-        </div>
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
     <script>
         let datetime = new Date();
         console.log(datetime);
