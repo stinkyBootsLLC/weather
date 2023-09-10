@@ -18,7 +18,6 @@ Created for educational purposes only. I wanted to create a web app using the py
 
 * Download or clone this repository
 
-
 ## Lessons Learned
 
 This specific app would have been easier to create with just a javascript framework such as Node, Vue, etc...  It simply calls a rest API and renders the HTML.  So why did I use python? To learn.  The biggest problem, is that the app only searches by US zipcode. Users should be able to search weather by zipcode AND city name.  City names are much easier to memorize. State is not included in the JSON response. I have a free account, so it is limited. Seems like _"open weather"_ is click bait.
@@ -38,7 +37,7 @@ This specific app would have been easier to create with just a javascript framew
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [The Unlicense](https://unlicense.org) 
 
 ## Acknowledgments
 
