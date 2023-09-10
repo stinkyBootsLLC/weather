@@ -38,7 +38,7 @@
                     </form>
                     <br>
 
-                    {% if data %}
+                    {% if data["Error"] != "coordinates failed" %}
 
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
@@ -75,49 +75,47 @@
 
                             <img src="https://openweathermap.org/img/wn/{{ data.forcast[4]['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-
-                            {{ data.forcast[4]["weather"][0]["main"] }} -
-
-                            {{ data.forcast[4]["dt_txt"] }} - {{ data.forcast[4]["main"]["temp"] }} &deg;F
-
+                            {{ format_date( data.forcast[4]["dt_txt"]) }} <strong>{{ data.forcast[4]["main"]["temp"] }} &deg;F</strong> 
+                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[4]["weather"][0]["description"] }}</em> 
                         </li>
                         <li class="list-group-item">
 
                             <img src="https://openweathermap.org/img/wn/{{ data.forcast[12]['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ data.forcast[12]["weather"][0]["main"] }} -
-
-                            {{ data.forcast[12]["dt_txt"] }} - {{ data.forcast[12]["main"]["temp"] }} &deg;F
+                            {{ format_date( data.forcast[12]["dt_txt"]) }} <strong>{{ data.forcast[12]["main"]["temp"] }} &deg;F</strong>
+                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[12]["weather"][0]["description"] }}</em> 
                         </li>
                         <li class="list-group-item">
 
                             <img src="https://openweathermap.org/img/wn/{{ data.forcast[20]['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ data.forcast[20]["weather"][0]["main"] }} -
-
-                            {{ data.forcast[20]["dt_txt"] }} - {{ data.forcast[20]["main"]["temp"] }} &deg;F
+                            {{ format_date( data.forcast[20]["dt_txt"]) }} <strong>{{ data.forcast[20]["main"]["temp"] }} &deg;F</strong> 
+                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[20]["weather"][0]["description"] }}</em> 
                         </li>
                         <li class="list-group-item">
 
                             <img src="https://openweathermap.org/img/wn/{{ data.forcast[28]['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ data.forcast[28]["weather"][0]["main"] }} -
-
-                            {{ data.forcast[28]["dt_txt"] }} - {{ data.forcast[28]["main"]["temp"] }} &deg;F
+                            {{ format_date( data.forcast[28]["dt_txt"]) }}  <strong>{{ data.forcast[28]["main"]["temp"] }} &deg;F</strong> 
+                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[28]["weather"][0]["description"] }}</em> 
                         </li>
                         <li class="list-group-item">
 
                             <img src="https://openweathermap.org/img/wn/{{ data.forcast[36]['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ data.forcast[36]["weather"][0]["main"] }} -
-
-                            {{ data.forcast[36]["dt_txt"] }} - {{ data.forcast[36]["main"]["temp"] }} &deg;F
+                            {{ format_date( data.forcast[36]["dt_txt"]) }} <strong>{{ data.forcast[36]["main"]["temp"] }} &deg;F</strong> 
+                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[36]["weather"][0]["description"] }}</em> 
                         </li>
 
                     </ul>
 
 
                 </div>
+
+                {% else %}
+
+                zipcode not found
+
 
                 {% endif %}
 

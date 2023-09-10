@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
- 
     data = None
 
     if request.method == 'POST':
@@ -20,9 +19,23 @@ def index():
 
         # print(data)
 
-        
-       
-    return render_template("index.html",data=data)
+
+
+
+    return render_template("index.html", data=data)
+
+
+@app.context_processor
+def utility_processor():
+
+    def format_date(date_string):
+        return date_string[:11]
+
+    return dict(format_date=format_date)
+
+
+
+
 
 
 if __name__ == "__main__":
