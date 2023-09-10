@@ -86,14 +86,21 @@
                                     <img src="https://openweathermap.org/img/wn/{{ i['weather'][0]['icon'] }}.png"
                                         class="img-fluid rounded-start" alt="icon">
                                     {{ get_day(i["dt_txt"]) }}<strong> &nbsp;{{ i["main"]["temp"] }} &deg;F</strong>
-                                    <em style="color: rgb(85, 85, 89);">&nbsp;{{ i["weather"][0]["description"] }}</em>
+                                    <em style="color: rgb(85, 85, 89);">&nbsp;{{ i["weather"][0]["main"] }}</em>
                                 </button>
                             </h2>
                             <div id="collapse_{{ i['dt'] }}" class="accordion-collapse collapse"
                                 aria-labelledby="heading_{{ i['dt'] }}" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    This is the first item's accordion body.
 
+                                    Will Feel like: {{ i['main']['feels_like'] }} &deg;F <br>
+
+                                    High: {{ i['main']['temp_max'] }} &deg;F Low: {{ i['main']['temp_min'] }} &deg;F<br>
+                                    
+                                    Humidity: {{ i['main']['humidity'] }}% Pressure: {{ i['main']['pressure'] }} hPa <br>
+
+                                    {{ i["weather"][0]["description"] }}
+                                    
                                 </div>
                             </div>
                         </div>
