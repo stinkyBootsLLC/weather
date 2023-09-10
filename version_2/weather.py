@@ -62,11 +62,11 @@ def get_five_day_forcast(lat, long):
 
 def main(zip_code):
 
-        """ Returns a dictionary of information based on zipcode
+    """ Returns a dictionary of information based on zipcode
 
-            Parameters: zip_code (str)
-            Returns: weather_data (dict)
-        """
+        Parameters: zip_code (str)
+        Returns: weather_data (dict)
+    """
     
     cordinates = get_lat_and_long(zip_code)
     

@@ -41,11 +41,11 @@ def utility_processor():
         Function get_day()
     """
     def get_day(date_str):
-    """ Returns the day of the week based on a date string
+        """ Returns the day of the week based on a date string
 
-        Parameters: date_str (str)
-        Returns: Day (str)
-    """
+            Parameters: date_str (str)
+            Returns: Day (str)
+        """
 
         date_format = '%Y-%m-%d %H:%M:%S'
 
