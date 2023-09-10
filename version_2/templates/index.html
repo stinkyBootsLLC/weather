@@ -71,43 +71,29 @@
                 <div class="col">
                     <h2>5 Day Forecast</h2>
                     <ul class="list-group">
+                        {% for i in data.forcast[::8] %}
+
+                        <!-- <li>{{ i["dt"] }}</li> -->
                         <li class="list-group-item">
 
-                            <img src="https://openweathermap.org/img/wn/{{ data.forcast[4]['weather'][0]['icon'] }}@2x.png"
+                            <img src="https://openweathermap.org/img/wn/{{ i['weather'][0]['icon'] }}@2x.png"
                                 class="img-fluid rounded-start" alt="icon">
-                            {{ format_date( data.forcast[4]["dt_txt"]) }} <strong>{{ data.forcast[4]["main"]["temp"] }} &deg;F</strong> 
-                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[4]["weather"][0]["description"] }}</em> 
+                            {{ format_date(i["dt_txt"]) }} <strong>{{ i["main"]["temp"] }} &deg;F</strong> 
+                            <em style="color: rgb(85, 85, 89);">{{ i["weather"][0]["description"] }}</em> 
                         </li>
-                        <li class="list-group-item">
 
-                            <img src="https://openweathermap.org/img/wn/{{ data.forcast[12]['weather'][0]['icon'] }}@2x.png"
-                                class="img-fluid rounded-start" alt="icon">
-                            {{ format_date( data.forcast[12]["dt_txt"]) }} <strong>{{ data.forcast[12]["main"]["temp"] }} &deg;F</strong>
-                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[12]["weather"][0]["description"] }}</em> 
-                        </li>
-                        <li class="list-group-item">
-
-                            <img src="https://openweathermap.org/img/wn/{{ data.forcast[20]['weather'][0]['icon'] }}@2x.png"
-                                class="img-fluid rounded-start" alt="icon">
-                            {{ format_date( data.forcast[20]["dt_txt"]) }} <strong>{{ data.forcast[20]["main"]["temp"] }} &deg;F</strong> 
-                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[20]["weather"][0]["description"] }}</em> 
-                        </li>
-                        <li class="list-group-item">
-
-                            <img src="https://openweathermap.org/img/wn/{{ data.forcast[28]['weather'][0]['icon'] }}@2x.png"
-                                class="img-fluid rounded-start" alt="icon">
-                            {{ format_date( data.forcast[28]["dt_txt"]) }}  <strong>{{ data.forcast[28]["main"]["temp"] }} &deg;F</strong> 
-                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[28]["weather"][0]["description"] }}</em> 
-                        </li>
-                        <li class="list-group-item">
-
-                            <img src="https://openweathermap.org/img/wn/{{ data.forcast[36]['weather'][0]['icon'] }}@2x.png"
-                                class="img-fluid rounded-start" alt="icon">
-                            {{ format_date( data.forcast[36]["dt_txt"]) }} <strong>{{ data.forcast[36]["main"]["temp"] }} &deg;F</strong> 
-                            <em style="color: rgb(85, 85, 89);">{{ data.forcast[36]["weather"][0]["description"] }}</em> 
-                        </li>
+                      
+                        
+                        {% endfor %}
 
                     </ul>
+
+                    
+
+                    
+
+
+                    
 
 
                 </div>

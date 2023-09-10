@@ -39,9 +39,9 @@ def get_current_forcast(lat, long):
  
 
 def get_five_day_forcast(lat, long):
+
     response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&units=imperial&appid={config.api_key}").json()
 
-    
     return response['list']
 
 def main(zip_code):

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from markupsafe import escape
 from weather import main as get_weather
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -17,25 +18,21 @@ def index():
 
         data = get_weather(zipcode)
 
-        # print(data)
-
-
-
-
     return render_template("index.html", data=data)
 
 
 @app.context_processor
 def utility_processor():
 
-    def format_date(date_string):
-        return date_string[:11]
+    def format_date(date_str):
+
+        date_format = '%Y-%m-%d %H:%M:%S'
+
+        datetime_object = datetime.strptime(date_str, date_format)
+
+        return datetime_object.strftime('%A')
 
     return dict(format_date=format_date)
-
-
-
-
 
 
 if __name__ == "__main__":
