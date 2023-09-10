@@ -16,7 +16,9 @@ def index():
         # wrap with HTML escape
         zipcode = escape(request.form['zip-code'])
 
-        data = get_weather(zipcode)
+        if zipcode:
+
+            data = get_weather(zipcode)
 
     return render_template("index.html", data=data)
 
