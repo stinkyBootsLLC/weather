@@ -7,7 +7,7 @@ Date: 9/10/2023
 import config
 import requests
 
-def get_lat_and_long(zip_code): 
+def get_lat_and_long_by_zip(zip_code): 
     """ Returns a list with lattitude and longitude coordinates 
 
         Parameters: zip_code (str)
@@ -68,7 +68,7 @@ def main(zip_code):
         Returns: weather_data (dict)
     """
     
-    cordinates = get_lat_and_long(zip_code)
+    cordinates = get_lat_and_long_by_zip(zip_code)
     
     if cordinates[0] != '404': 
 
