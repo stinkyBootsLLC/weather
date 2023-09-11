@@ -16,9 +16,12 @@ def get_lat_and_long_by_name(city, state):
 
     response = requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city},{state},us&appid={config.api_key}").json()
 
-    if 'cod' in response:
+    print(response)
 
-        coordinates = [response[0]['cod'], response[0]['message']]
+
+    if len(response) < 1:
+
+        coordinates = ['404', 'message']
     else:
 
         coordinates = [response[0]['lat'], response[0]['lon']]
