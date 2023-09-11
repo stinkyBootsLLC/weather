@@ -7,6 +7,36 @@ Date: 9/10/2023
 import config
 import requests
 
+def get_lat_and_long_by_name(city, state): 
+    """ Returns a list with lattitude and longitude coordinates 
+
+        Parameters: zip_code (str)
+        Returns: coordinates (list)
+    """
+
+    response = requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city},{state},us&appid={config.api_key}").json()
+
+    if 'cod' in response:
+
+        coordinates = [response[0]['cod'], response[0]['message']]
+    else:
+
+        coordinates = [response[0]['lat'], response[0]['lon']]
+
+    return coordinates 
+
+
+  
+
+
+
+
+
+
+
+
+
+
 def get_lat_and_long_by_zip(zip_code): 
     """ Returns a list with lattitude and longitude coordinates 
 
@@ -60,15 +90,30 @@ def get_five_day_forcast(lat, long):
 
     return response['list']
 
-def main(zip_code):
+def main(*args):
 
     """ Returns a dictionary of information based on zipcode
 
         Parameters: zip_code (str)
         Returns: weather_data (dict)
     """
-    
-    cordinates = get_lat_and_long_by_zip(zip_code)
+
+    user_input = []
+
+    for argument in args:
+
+        user_input.append(argument)
+
+    if len(user_input) > 1:
+
+        cordinates = get_lat_and_long_by_name(user_input[0], user_input[1])
+
+    else:
+
+        cordinates = get_lat_and_long_by_zip(user_input[0]) # zipcode
+
+
+    print(cordinates)
     
     if cordinates[0] != '404': 
 

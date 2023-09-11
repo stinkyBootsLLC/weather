@@ -23,13 +23,27 @@ def index():
 
     if request.method == 'POST':
 
-        print(request.method)
+        
         # wrap with HTML escape
         zipcode = escape(request.form['zip-code'])
+
+        
+
+        state = escape(request.form['state'])
+
+        city = escape(request.form['city'])
+
+       
+
+       
 
         if zipcode:
 
             data = get_weather(zipcode)
+
+        else:
+
+            data = get_weather(city, state)
 
     return render_template("index.html", data=data)
 

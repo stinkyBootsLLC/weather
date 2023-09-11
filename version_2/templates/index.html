@@ -29,13 +29,33 @@
                     <form action="/" method="post">
 
                         <div class="input-group">
+
                             <input id="zip-code" type="text" class="form-control" pattern="[0-9]*"
                                 placeholder="Enter Zip Code" title="US ZIP Codes only - 12345" maxlength="5"
                                 minlength="5" aria-label="Zip Code" aria-describedby="search-btn" name="zip-code">
+
+                        </div>
+
+                        <div style="padding-top: 10px"></div>
+                         
+                        <p style="text-align:center">|| OR ||</p>
+                         
+                        <div class="input-group">
+
+                            <input id="city" type="text" class="form-control" placeholder="Enter City"
+                                title="City Name" aria-label="City" aria-describedby="search-btn"
+                                name="city">
+
+                            <input id="state" type="text" class="form-control" placeholder="Enter State"
+                                title="State Name" aria-label="State" aria-describedby="search-btn"
+                                name="state">
+
                             <button class="btn btn-outline-secondary" id="search-btn">Find</button>
+
                         </div>
 
                     </form>
+                    
                     <br>
 
                     {% if data %}
@@ -60,7 +80,8 @@
                                         </strong>{{ data.current.pressure }} hPa <br>
                                         <span style="font-size: 8pt;" id="time"> </span>
                                     </p>
-                                    <p class="card-text"><small class="text-muted">{{ data.current.description }}</small></p>
+                                    <p class="card-text"><small class="text-muted">{{ data.current.description
+                                            }}</small></p>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +90,7 @@
                 <div class="col">
 
                     <h2>Five Day Forecast</h2>
-                    
+
                     <div class="accordion" id="forecast">
 
                         {% for i in data.forcast[::8] %}
