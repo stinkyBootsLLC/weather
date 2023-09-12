@@ -39,7 +39,7 @@ This specific app would have been easier to create with just a javascript framew
 
 ## License
 
-This project is licensed under the [The Unlicense](https://unlicense.org) 
+This project is licensed under the [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/legalcode) 
 
 ## Acknowledgments
 
