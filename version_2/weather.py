@@ -2,7 +2,7 @@
 Name: weather.py
 Description: Logic for retrieving weather data from openweathermap.org RESTful API
 Author: Eduardo Estrada
-Date: 9/10/2023
+Date: 9/11/2023
 """
 import config
 import requests
@@ -16,9 +16,6 @@ def get_lat_and_long_by_name(city, state):
 
     response = requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city},{state},us&appid={config.api_key}").json()
 
-    print(response)
-
-
     if len(response) < 1:
 
         coordinates = ['404', 'message']
@@ -27,18 +24,6 @@ def get_lat_and_long_by_name(city, state):
         coordinates = [response[0]['lat'], response[0]['lon']]
 
     return coordinates 
-
-
-  
-
-
-
-
-
-
-
-
-
 
 def get_lat_and_long_by_zip(zip_code): 
     """ Returns a list with lattitude and longitude coordinates 
@@ -115,9 +100,6 @@ def main(*args):
 
         cordinates = get_lat_and_long_by_zip(user_input[0]) # zipcode
 
-
-    print(cordinates)
-    
     if cordinates[0] != '404': 
 
         current_forcast = get_current_forcast(cordinates[0], cordinates[1])
