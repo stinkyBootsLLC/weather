@@ -26,8 +26,11 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col">
+                    <div class="alert alert-primary" role="alert">
+                        Enter a zipcode or city and state
+                      </div>
                     <form action="/" method="post">
-
+                        
                         <div class="input-group">
 
                             <input id="zip-code" type="text" class="form-control" pattern="[0-9]*"
@@ -37,8 +40,6 @@
                         </div>
 
                         <div style="padding-top: 10px"></div>
-                         
-                        <p style="text-align:center">|| OR ||</p>
                          
                         <div class="input-group">
 
@@ -112,11 +113,9 @@
 
                                     🤖 Will Feel like: {{ i['main']['feels_like'] }} &deg;F <br>
 
-                                    ⬆️ High: {{ i['main']['temp_max'] }} &deg;F ⬇️ Low: {{ i['main']['temp_min'] }}
-                                    &deg;F<br>
+                                    ⬆️ High: {{ i['main']['temp_max'] }} &deg;F ⬇️ Low: {{ i['main']['temp_min'] }} &deg;F<br>
 
-                                    Humidity: {{ i['main']['humidity'] }}% Pressure: {{ i['main']['pressure'] }} hPa
-                                    <br>
+                                    Humidity: {{ i['main']['humidity'] }}% Pressure: {{ i['main']['pressure'] }} hPa <br>
 
                                     {{ i["weather"][0]["description"] }}
 
@@ -132,8 +131,9 @@
 
                     {% else %}
 
-                    <div class="alert alert-warning" role="alert">location not found</div>
-
+                    <div class="alert alert-warning" role="alert">
+                        <strong>location not found</strong>
+                    </div>
 
                     {% endif %}
 
