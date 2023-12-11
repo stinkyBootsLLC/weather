@@ -10,15 +10,21 @@ Created for educational purposes only. I wanted to create a web app using the py
 2. Displays current weather
 3. Displays five day weather forcast
 
-### Dependencies
+## Dependencies
 
 * Python 3.6.8
 * Python Flask
 * [openweathermap](https://openweathermap.org/) API key
 
-### Installing
+## Installing
 
 * Download or clone this repository
+  * `git clone https://github.com/stinkyBootsLLC/weather.git`
+
+## Getting Started
+
+* Run the application script `python app.py`
+* Navigate to `http://127.0.0.1:5000` with a web browser
 
 ## Lessons Learned
 
