@@ -26,7 +26,12 @@ Created for educational purposes only. I wanted to create a web app using the py
 * Run the application script `python app.py`
 * Navigate to `http://127.0.0.1:5000` with a web browser
 
-## Lessons Learned
+07052024
+NOTE TO SELF- I HAVE A VIRTUAL ENV SET UP IN HERE `.venv`
+TO ACTIVATE `source .venv/bin/activate`
+
+
+# Lessons Learned
 
 This specific app would have been easier to create with just a javascript framework such as Node, Vue, etc...  It simply calls a rest API and renders the HTML.  So why did I use python? To learn. State is not included in the JSON response. I have a free account, so it is limited. Seems like _"open weather"_ is click bait.
 
