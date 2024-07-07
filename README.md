@@ -33,7 +33,7 @@ TO ACTIVATE `source .venv/bin/activate`
 
 # Lessons Learned
 
-This specific app would have been easier to create with just a javascript framework such as Node, Vue, etc...  It simply calls a rest API and renders the HTML.  So why did I use python? To learn. State is not included in the JSON response. I have a free account, so it is limited. Seems like _"open weather"_ is click bait.
+This specific app would have been easier to create with just a javascript framework such as Node, Vue, etc...  It simply calls a rest API and renders the HTML.  So why did I use python? To learn. State is not included in the JSON response. I have a free account, so it is limited.
 
 ## Version History
 
