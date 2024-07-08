@@ -1,0 +1,32 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 667px) and (max-device-width: 667px){
+    .accordion-button{
+        font-size: 7pt;
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-device-width: 740px){
+    .accordion-button{
+        font-size: 7pt;
+    }
+}
+
+@media only screen and (min-width: 720px) and (max-device-width: 720px){
+    .accordion-button{
+        font-size: 7pt;
+    }
+}
+
+@media only screen and (min-width: 540px) and (max-device-width: 540px){
+    .accordion-button{
+        font-size: 7pt;
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-device-width: 280px){
+    .accordion-button{
+        font-size: 7pt;
+    }
+}
+
+ 
