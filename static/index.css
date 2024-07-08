@@ -1,4 +1,4 @@
-/* Extra small devices (phones, 600px and down) */
+
 @media only screen and (min-width: 667px) and (max-device-width: 667px){
     .accordion-button{
         font-size: 7pt;
